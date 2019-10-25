@@ -1,10 +1,19 @@
 <?php
-// https://github.com/BaseMax/RouteDistance
+/**
+ *
+ * @Name : RouteDistance
+ * @Version : 1.0
+ * @Programmer : Max
+ * @Date : 2019-10-25
+ * @Released under : https://github.com/BaseMax/RouteDistance/blob/master/LICENSE
+ * @Repository : https://github.com/BaseMax/RouteDistance
+ *
+ **/
 $api="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";// Modify this!
 $origin=$_GET['from1'].",".$_GET['from2'];
 $destination=$_GET['to1'].",".$_GET['to2'];
-$url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=$origin&destinations=$destination&key=".$api;
-$curl = curl_init();
+$url="https://maps.googleapis.com/maps/api/distancematrix/json?origins=$origin&destinations=$destination&key=".$api;
+$curl=curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_PROXYPORT, 3128);
